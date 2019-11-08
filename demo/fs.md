@@ -46,6 +46,7 @@
 - data:要写入文件的数据 String或者Buffer 对象
 - options:对象 包含{encoding,mode,flag} 默认值分别为 'utf8' '0o666' 'w'
 - callback:回调函数
+### 文件操作
 #### 获取文件信息
 ```fs.stat(path,callback)```
 参数说明:
@@ -66,4 +67,22 @@
 ```fs.rename(oldPath,newPath,callback)```
 - oldPath:原来的文件名字
 - newPath:新的文件名字
+- callback:回调函数
+### 目录操作
+#### 新建目录
+```fs.mkdir(path[,options],callback)```
+参数说明
+- path:文件路径
+- option:有两个参数 recursive表示是否以递归的方式创建目录 默认false mode设置目录权限 默认0o777
+- callback:回调函数
+#### 读取目录
+```fs.readdir(path[,option],callback)```
+参数说明
+- path:文件路径
+- options:两个参数 encoding,withFileTypes 默认'utf8' false
+- callback:回调函数 err为错误信息 files为目录下的文件数组列表
+#### 删除目录
+```fs.rmdir(path,callback)```
+参数说明:
+- path:文件路径
 - callback:回调函数
